@@ -1,4 +1,7 @@
+#!/usr/bin/env python3
+
 import os
+
 
 def get_files(path):
     files = []
@@ -9,6 +12,7 @@ def get_files(path):
                 files.append(os.path.join(r, file))
 
     return files
+
 
 def main():
     files = get_files("/home/robertoandradas")
@@ -22,6 +26,7 @@ def main():
                 hasht[c] = 1
 
     print(hasht)
+
 
 if __name__ == "__main__":
     main()

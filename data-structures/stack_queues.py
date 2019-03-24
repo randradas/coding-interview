@@ -1,4 +1,7 @@
+#!/usr/bin/env python3
+
 from collections import deque
+
 
 def process_with_stack(numbers):
     """Return a list items read from a stack"""
@@ -40,4 +43,4 @@ def main(numbers):
 
 
 if __name__ == "__main__":
-    main([123,123112,1123123,112311123123,1121,1,1,2,4,5,3,1,2,3,1,1,2,3,4,6,69,76,76,78,78,78,4545])
+    main([123, 123112, 1123123, 112311123123, 1121, 1, 1, 2, 4, 5, 3, 1, 2, 3, 1, 1, 2, 3, 4, 6, 69, 76, 76, 78, 4545])
