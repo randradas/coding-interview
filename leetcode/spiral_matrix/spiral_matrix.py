@@ -4,6 +4,7 @@ class Solution(object):
         :type matrix: List[List[int]]
         :rtype: List[int]
         """
+        if not matrix: return []
 
         row = 0
         column = 0
@@ -13,36 +14,45 @@ class Solution(object):
         min_column = 0
 
         items = len(matrix) * len(matrix[0])
+        print(items)
         output = []
 
         while len(output) != items:
-            while column <= max_column:
-                output.append(matriz[row][column])
+            while column <= max_column and len(output) != items:
+                print("x:%s y:%s" % (row, column))
+                output.append(matrix[row][column])
                 column += 1
 
+            min_row += 1
+            row += 1
+            column -= 1
+
+            while row <= max_row and len(output) != items:
+                print("x:%s y:%s" % (row, column))
+                output.append(matrix[row][column])
+                row += 1
+
             max_column -= 1
+            row -= 1
+            column -= 1
 
-== == == == == == == == == == == == =
+            while column >= min_column and len(output) != items:
+                print("x:%s y:%s" % (row, column))
+                output.append(matrix[row][column])
+                column -= 1
 
-while row <= max_row:
-    output.append(matrix[row][column])
-    row += 1
+            max_row -= 1
+            column += 1
+            row -= 1
 
-row -= 1
+            while row >= min_row and len(output) != items:
+                print("x:%s y:%s" % (row, column))
+                output.append(matrix[row][column])
+                row -= 1
 
-while column >= min_column:
-    output.append(matrix[row][column])
-    column -= 1
+            min_column += 1
+            row += 1
+            column += 1
+            print(len(output))
 
-while row < min_row:
-    output.append(matrix[row][column])
-    row += 1
-
-for number in matrix[origin + iter:dest - iter]:
-    output.append(number)
-
-while index <
-
-    for number in range
-
-    for number in matrix
+        return output
