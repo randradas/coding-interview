@@ -4,7 +4,7 @@
 def main(dataset, item):
     left = 0
     right = len(dataset) - 1
-    pivot = (left + right) / 2
+    pivot = int((left + right) / 2)
 
     while left != right:
         print("left: %d" % left)
@@ -19,7 +19,7 @@ def main(dataset, item):
             if left != pivot:  # when item is at index 0, right is not moved.
                 right = pivot
 
-            pivot = (left + right) / 2
+            pivot = int((left + right) / 2)
 
         elif item > dataset[pivot]:
             print("position %d is not %d" % (pivot, item))
@@ -27,7 +27,7 @@ def main(dataset, item):
                 pivot = right  # when item is at index len(dataset)-1, left is not moved.
             else:
                 left = pivot
-                pivot = (left + right) / 2
+                pivot = int((left + right) / 2)
 
 
 if __name__ == "__main__":
